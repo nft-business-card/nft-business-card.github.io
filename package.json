@@ -1,0 +1,35 @@
+{
+  "name": "business-card-nft",
+  "version": "0.1.0",
+  "homepage": "https://nf-nft.github.io/business-card",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "next start",
+    "lint": "next lint",
+    "export": "next export"
+  },
+  "dependencies": {
+    "@alch/alchemy-web3": "^1.2.4",
+    "dotenv": "^16.0.0",
+    "embla-carousel-react": "^6.2.0",
+    "next": "12.1.0",
+    "postcss-cli": "^9.1.0",
+    "randomcolor": "^0.6.2",
+    "react": "17.0.2",
+    "react-color": "^2.19.3",
+    "react-dom": "17.0.2",
+    "react-svg": "^14.1.12",
+    "webjs": "^0.6.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "eslint": "8.9.0",
+    "eslint-config-next": "12.1.0",
+    "postcss": "^8.4.7",
+    "tailwindcss": "^3.0.23"
+  }
+}
