@@ -1,7 +1,7 @@
 {
   "name": "business-card-nft",
   "version": "0.1.0",
-  "homepage": "https://nft-business-card.github.io/nft-business-card",
+  "homepage": "https://nft-business-card.github.io",
   "private": true,
   "scripts": {
     "dev": "next dev",
