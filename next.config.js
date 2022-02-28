@@ -13,4 +13,4 @@ const nextConfig = {
   //assetPrefix: "/nft-business-card"
 }
 
-module.exports = nextConfig
+module.exports = nextConfig 
