@@ -7,10 +7,10 @@ const nextConfig = {
   },
   env : {
     API_URL: process.env.API_URL
-  }
+  },
  
-  //basePath: "/business-card",
-  //assetPrefix: "/business-card"
+  basePath: "/",
+  assetPrefix: "/"
 }
 
 module.exports = nextConfig
