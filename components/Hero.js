@@ -4,17 +4,18 @@ import { SwatchesPicker } from 'react-color'
 import {
 mint, getCurrentWalletConnected, getCurrentPriceOfNFT
 } from "../utils/interact";
+import { renderToString } from 'react-dom/server'
 
 class Hero extends React.Component {
 
   state = {
     displayColorPickerBackground: false,
     displayColorPickerText: false,
-    fullNameData : "",
-    titleData : "",
-    otherData : "",
-    backgroundColor : "",
-    textColor : "",
+    fullNameData : "Your Full Name",
+    titleData : "Your Title",
+    otherData : "Email|Company|Website|Twitter",
+    backgroundColor : "#a3eeff",
+    textColor : "#17aab2", 
     walletAddress : "",
     currentPriceOfNFT: ""
   };
@@ -38,12 +39,11 @@ class Hero extends React.Component {
       this.setState({currentPriceOfNFT : _currentPriceOfNFT});
       
       if(this.state.fullNameData != "" && this.state.titleData != "" && this.state.otherData != ""){
-        const mintStatu =await mint(this.state);
+        const mintStatu = await mint(this.state);
         if(mintStatu.status){
-          document.getElementById("walletDiv").hidden = false;
-          document.getElementById("walletAlert").hidden = false;
-          document.getElementById("walletAlert").innerHTML = mintStatu.status;
-          setTimeout(()=> document.getElementById("walletDiv").hidden = true, 5000);
+          document.getElementById("walletSuccessDiv").hidden = false;
+          document.getElementById("walletSuccessDiv").innerHTML = renderToString(mintStatu.status);
+          //setTimeout(()=> document.getElementById("walletDiv").hidden = true, 5000);
         }
       }
       else{
@@ -100,6 +100,9 @@ class Hero extends React.Component {
   return (
     <main id="main" className="h-screen py-16 bg-pattern">
       <div className="container max-w-8xl mx-auto flex flex-col items-center pt-4">
+      <div id="walletSuccessDiv" hidden={true}>
+       
+      </div>
       <div id="walletDiv" className="bg-red-200 border-red-600 text-red-600 border-l-4 p-4 my-2" role="alert" hidden={true}>
         <p id="walletAlert" className="font-bold" hidden={true}>
         </p>
@@ -125,7 +128,7 @@ class Hero extends React.Component {
 
               <div className="flex flex-col mb-4">
                 <div className=" relative ">
-                  <input type="text" onChange={event =>this.setState({otherData:event.target.value})} id="rounded-other" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Email/Company/Website/Linkedin/Twitter"/>
+                  <input type="text" onChange={event =>this.setState({otherData:event.target.value})} id="rounded-other" className=" rounded-lg border-transparent flex-1 appearance-none border border-gray-300 w-full py-2 px-4 bg-white text-gray-700 placeholder-gray-400 shadow-sm text-base focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent" placeholder="Email|Company|Website|Linkedin|Twitter"/>
                 </div>
               </div>
 
