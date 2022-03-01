@@ -7,7 +7,7 @@ const HowToSection = () => {
                 Features of NFT Business Card Project
             </h1>
 
-            <h2 class="font-light max-w-2xl mx-auto w-full text-xl dark:text-white text-gray-500 text-center py-8">
+            <h2 className="font-light max-w-2xl mx-auto w-full text-xl dark:text-white text-gray-500 text-center py-8">
             NFT Business Card is a collection of unlimited unique  NFTs— unique digital collectibles living on the Polygon platform. You can have a NFT Business Card for sharing it on web3 platforms and showing your identity to people.
             </h2>
 

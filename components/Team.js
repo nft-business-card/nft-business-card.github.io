@@ -20,9 +20,6 @@ const Team = () => {
                             <p className="font-body mb-3">
                                 Senior Software Developer
                             </p>
-                            <a className="font-body text-blue-500 hover:text-gray-800" href="mailto:fatihyildirim93@gmail.com">
-                                fatihyildirim93@gmail.com
-                            </a>
                         </div>
                     </div>
                     <div className="md:w-1/2 text-center">
@@ -34,9 +31,6 @@ const Team = () => {
                             <p className="font-body mb-3">
                                 Lead Blockchain Developer
                             </p>
-                            <a className="font-body text-blue-500 hover:text-gray-800" href="mailto:nihatysimsek@gmail.com">
-                                nihatysimsek@gmail.com
-                            </a>
                         </div>
                     </div>
                 </div>
