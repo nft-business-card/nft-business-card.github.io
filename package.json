@@ -13,16 +13,17 @@
     "export": "next export"
   },
   "dependencies": {
-    "@alch/alchemy-web3": "^1.2.4",
+    "@alch/alchemy-web3": "^1.2.5",
     "dotenv": "^16.0.0",
     "embla-carousel-react": "^6.2.0",
-    "next": "12.1.0",
+    "next": "^12.1.0",
     "postcss-cli": "^9.1.0",
     "randomcolor": "^0.6.2",
     "react": "17.0.2",
     "react-color": "^2.19.3",
     "react-dom": "17.0.2",
     "react-svg": "^14.1.12",
+    "web3": "^1.7.0",
     "webjs": "^0.6.1"
   },
   "devDependencies": {
