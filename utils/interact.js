@@ -123,33 +123,33 @@ export const mint = async (dataFormat) => {
       status: (
         <div>
           
-<div class="relative">
-    <div class="h-screen w-full z-10 inset-0 overflow-y-auto">
-        <div class="absolute w-full h-full inset-0 bg-gray-500 opacity-75">
+<div className="relative">
+    <div className="h-screen w-full z-10 inset-0 overflow-y-auto">
+        <div className="absolute w-full h-full inset-0 bg-gray-500 opacity-75">
         </div>
-        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
+        <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
             </span>
-            <div class="inline-block relative overflow-hidden transform transition-all sm:align-middle sm:max-w-lg" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+            <div className="inline-block relative overflow-hidden transform transition-all sm:align-middle sm:max-w-lg" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
                 <div>
-                    <div class="rounded-lg p-8 bg-white shadow">
-                        <div class="bg-white dark:bg-gray-800 ">
-                            <div class="text-center w-full mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 z-20">
-                            <h2 class="text-3xl font-extrabold text-black dark:text-white sm:text-4xl">
-                                                  <span class="block">
+                    <div className="rounded-lg p-8 bg-white shadow">
+                        <div className="bg-white dark:bg-gray-800 ">
+                            <div className="text-center w-full mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 z-20">
+                            <h2 className="text-3xl font-extrabold text-black dark:text-white sm:text-4xl">
+                                                  <span className="block">
                                                   Once the transaction is verified by the network, NFT is Yours!
                                     </span>                              
                                 </h2>
                             
-                                <div class="lg:mt-0 lg:flex-shrink-0">
-                                    <div class="flex items-center justify-between gap-4 w-full mt-8">
-                                        <a target="_blank" href={`https://mumbai.polygonscan.com/tx/${txHash}`} type="button" class="py-4 px-6 m-2 bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                                <div className="lg:mt-0 lg:flex-shrink-0">
+                                    <div className="flex items-center justify-between gap-4 w-full mt-8">
+                                        <a target="_blank" href={`https://mumbai.polygonscan.com/tx/${txHash}`} type="button" className="py-4 px-6 m-2 bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
                                         View on Mumbai
                                         </a>
-                                        <a target="_blank" href={`https://mumbai.polygonscan.com/tx/${txHash}`} type="button" class="py-4 px-6 m-2 bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                                        <a target="_blank" href={`https://mumbai.polygonscan.com/tx/${txHash}`} type="button" className="py-4 px-6 m-2 bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
                                         View on OpenSea
                                         </a>
-                                        <a href={`https://nft-business-card.github.io`} type="button" class="py-4 px-6 m-2 bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                                        <a href={`https://nft-business-card.github.io`} type="button" className="py-4 px-6 m-2 bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
                                         Buy one more!
                                         </a>
                                     </div>
@@ -179,4 +179,13 @@ export const getCurrentPriceOfNFT = async () => {
   const result = await nftBusinessCard.methods.getCurrentPriceOfNFT().call();
   return web3.utils.fromWei(result);
 };
+
+export const getTotalSupplyNFT = async () => {
+  const result = await nftBusinessCard.methods.totalSupply().call();
+  return result;
+};
+
+export const isChainCorrect = () => {
+  return window.ethereum.chainId == "0x13881";
+}
 

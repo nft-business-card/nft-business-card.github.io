@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import randomColor from "randomcolor";
 import { SwatchesPicker } from 'react-color'
 import {
-mint, getCurrentWalletConnected, getCurrentPriceOfNFT
+mint, getCurrentWalletConnected, getCurrentPriceOfNFT,isChainCorrect
 } from "../utils/interact";
 import { renderToString } from 'react-dom/server'
 
@@ -38,6 +38,14 @@ class Hero extends React.Component {
       this.setState({walletAddress : walletResponse.address});
       this.setState({currentPriceOfNFT : _currentPriceOfNFT});
       
+      if(!isChainCorrect()){
+        document.getElementById("walletDiv").hidden = false;
+        document.getElementById("walletAlert").hidden = false;
+        document.getElementById("walletAlert").innerHTML = "Please change your network to Polygon on Metamask!";
+        setTimeout(()=> document.getElementById("walletDiv").hidden = true, 5000);
+        return;
+      }
+
       if(this.state.fullNameData != "" && this.state.titleData != "" && this.state.otherData != ""){
         const mintStatu = await mint(this.state);
         if(mintStatu.status){

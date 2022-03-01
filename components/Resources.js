@@ -1,8 +1,13 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
-
+import {
+    getTotalSupplyNFT
+    } from "../utils/interact";
 const Resources = () => {
+
+    
+
     return (
         <div id="about" className="bg dark:bg-pink-500">
 
@@ -10,7 +15,7 @@ const Resources = () => {
                 <div className="text-center">
                     <h5 className="text-5xl font-bold text-white">
                         <span className="text-white">
-                            13
+                      1300
                         </span>
                         <span className="text-indigo-500">
                             +

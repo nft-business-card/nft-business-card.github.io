@@ -28,18 +28,21 @@ const Header = () => {
   }, []);
 
   const addWalletListener = () => {
-    if (window.ethereum) {
-      window.ethereum.on("accountsChanged", async (accounts) => {
-        if (accounts.length > 0) {
-          setWalletAddress(accounts[0]);
-          setStatus("");
-        } else {
-          setWalletAddress("");
-          setStatus("🦊 Connect to Metamask using Connect Wallet button.");
+    console.log("addWalletListener:");
+    //if (window.ethereum) {
+      ethereum.on('chainChanged', (chainId) => {
+       console.log("chainId:");
+        console.log(chainId);
+        if(chainId != "0x13881") // TODO: poligon olarak değiştiriliecek 137
+        {
+           
         }
+       // window.location.reload();
       });
-    }
+    //}
   };
+
+ 
 
   return (
     <>
