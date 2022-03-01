@@ -46,7 +46,7 @@ const Header = () => {
       <Head>
         <title>NFT Business Card</title>
         <meta name="description" content="Nft Minting Tutorial" />
-        <link rel="icon" href="/business-card/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <header className="sticky inset-x-0 top-0 z-10 h-20 min-w-full text-white border-b border-purple-900 bg-primary backdrop-filter backdrop-blur-lg bg-opacity-30">
