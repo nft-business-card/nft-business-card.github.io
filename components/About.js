@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const About = () => {
   return (
-    <div id="about" className="py-10 mt-16">
+    <div id="about" className="py-10 mt-16 mb-10">
       <h1 className="mb-20 font-mono text-6xl font-semibold text-center text-gray-100 uppercase">
         About The Project
       </h1>
@@ -70,7 +70,7 @@ const About = () => {
                       </svg>
                     </span>
                     <p className="ml-2">
-                      Randomized, several rarity items.
+                      Customizable personal items.
                     </p>
                   </li>
                   <li className="flex items-start">

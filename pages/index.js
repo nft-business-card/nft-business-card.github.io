@@ -7,6 +7,7 @@ import About from "../components/About";
 import Resources from "../components/Resources";
 import Footer from "../components/Footer";
 import Team from "../components/Team";
+import HowTo from "../components/HowToSection";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <Resources />
       <About />
+      <HowTo />
       <Team />
       <Footer />
     </div>
