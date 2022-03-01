@@ -7,7 +7,22 @@ const Resources = () => {
         <div id="about" className="bg dark:bg-pink-500">
 
             <div className="container relative max-w-6xl py-3 pt-16 mx-auto sm:max-w-xl sm:mx-auto">
+                <div className="text-center">
+                    <h5 className="text-5xl font-bold text-white">
+                        <span className="text-white">
+                            13
+                        </span>
+                        <span className="text-indigo-500">
+                            +
+                        </span>
+                    </h5>
+                    <p className="text-white tracking-wide text-2xl font-medium uppercase">
+                        NFT Card Minted
+                    </p>
+                </div>
+
                 <div>
+
                     <div className="text-center w-full mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 z-20">
                         <h2 className="text-3xl font-extrabold text-black dark:text-white sm:text-4xl">
                             <span className="block">
