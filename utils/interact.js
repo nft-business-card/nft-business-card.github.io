@@ -188,7 +188,10 @@ export const getTotalSupplyNFT = async () => {
 };
 
 export const isChainCorrect = () => {
-  return window.ethereum.chainId == "0x13881";
+  if(window.ethereum.chainId == 0x89){
+    return true;
+  }
+  return false;
 }
 export const isMetamaskInstalled = () => {
   if (window.ethereum) {
