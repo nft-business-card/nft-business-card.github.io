@@ -8,7 +8,7 @@ import { renderToString } from 'react-dom/server'
 
 class Hero extends React.Component {
 
-  
+
 
   state = {
     displayColorPickerBackground: false,
@@ -59,7 +59,7 @@ class Hero extends React.Component {
       else{
         document.getElementById("walletDiv").hidden = false;
         document.getElementById("walletAlert").hidden = false;
-        document.getElementById("walletAlert").innerHTML = "Please fill all the fields";
+        document.getElementById("walletAlert").innerHTML = "Please fill all the fields and don't write more than 40 letters.";
         setTimeout(()=> document.getElementById("walletDiv").hidden = true, 5000);
       }
       
@@ -78,7 +78,10 @@ class Hero extends React.Component {
       && this.state.otherData != "" 
       && this.state.fullNameData != "Your Full Name" 
       && this.state.titleData != "Your Title" 
-      && this.state.otherData != "Email|Company|Website|Twitter" 
+      && this.state.otherData != "Email|Company|Website|Twitter"
+      && this.state.fullNameData.length < 35
+      && this.state.titleData.length < 40
+      && this.state.otherData.length < 40
   }
 
   handleClickBackground = () => {
