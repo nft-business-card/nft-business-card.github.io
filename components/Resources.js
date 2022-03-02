@@ -47,7 +47,7 @@ const Resources = () => {
                                 <a type="button" href="#" className="py-4 px-6  bg-fuchsia-600 hover:bg-fuchsia-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
                                     Collection
                                 </a>
-                                <a type="button" href="#" className="py-4 px-6  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg mx-6">
+                                <a type="button" href="https://polygonscan.com/address/0xc1bBE845f42AdcB503394E2Aa55E3F4285ba6A67" target="_blank" className="py-4 px-6  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg mx-6">
                                     Contract
                                 </a>
                             </div>
