@@ -16,19 +16,11 @@ export const connectWallet = async () => {
 
   
   if (window.ethereum) {
-    console.log(ethereum.isConnected());
-
     try {
-      var isLoggedIn = false;
-      setTimeout(function(){
-        if(!isLoggedIn){alert('Login into Metamask')}
-    },1000);
       const addressArray = await window.ethereum.request({
-
         method: "eth_requestAccounts",
       });
-      isLoggedIn = true;
-      console.log(addressArray);
+
       const obj = {
         status: "",
         address: addressArray[0],
@@ -42,7 +34,6 @@ export const connectWallet = async () => {
       };
     }
   } else {
-    console.log("else");
     return {
       address: "",
       status: (
@@ -68,7 +59,6 @@ export const connectWallet = async () => {
 export const getCurrentWalletConnected = async () => {
 
   if (window.ethereum) {
-    console.log(window.ethereum);
     try {
       const addressArray = await window.ethereum.request({
         method: "eth_accounts",
@@ -92,7 +82,6 @@ export const getCurrentWalletConnected = async () => {
       };
     }
   } else {
-    console.log("else");
     return {
       address: "",
       status: (
@@ -117,7 +106,6 @@ export const getCurrentWalletConnected = async () => {
 
 export const mint = async (dataFormat) => {
   dataFormat = JSON.parse(JSON.stringify(dataFormat));
-  console.log(dataFormat);
   //set up transaction parameters
   const transactionParameters = {
     to: contractAddress, // Required except during contract publications.

@@ -53,7 +53,7 @@ class Hero extends React.Component {
         if(mintStatu.status){
           document.getElementById("walletSuccessDiv").hidden = false;
           document.getElementById("walletSuccessDiv").innerHTML = renderToString(mintStatu.status);
-          //setTimeout(()=> document.getElementById("walletDiv").hidden = true, 5000);
+          setTimeout(()=> document.getElementById("walletSuccessDiv").hidden = true, 5000);
         }
       }
       else{
