@@ -17,11 +17,17 @@ export const connectWallet = async () => {
   
   if (window.ethereum) {
     console.log(ethereum.isConnected());
+
     try {
+      var isLoggedIn = false;
+      setTimeout(function(){
+        if(!isLoggedIn){alert('Login into Metamask')}
+    },1000);
       const addressArray = await window.ethereum.request({
 
         method: "eth_requestAccounts",
       });
+      isLoggedIn = true;
       console.log(addressArray);
       const obj = {
         status: "",

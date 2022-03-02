@@ -11,9 +11,9 @@ const Header = () => {
   
   const connectWalletPressed = async () => {
     
-    if(isMetamaskInstalled()){
+    if(isMetamaskInstalled())
+    {
       
-    
     console.log("walled connect pressed");
     const walletResponse = await connectWallet();
     console.log("walletResponse:");
