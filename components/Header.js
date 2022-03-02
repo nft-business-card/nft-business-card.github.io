@@ -48,7 +48,7 @@ const Header = () => {
     <>
       <Head>
         <title>NFT Business Card</title>
-        <meta name="description" content="Nft Minting Tutorial" />
+        <meta name="description" content="Nft Business Card" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -90,7 +90,7 @@ const Header = () => {
 
           {/* Opensea Twitter Discord Links */}
           <nav aria-label="Contact Menu">
-            <ul className="flex items-center space-x-6">
+            <ul className="flex items-center space-x-6 mx-2">
               <li>
                 <a href="https://opensea.io" target="_blank" rel="noreferrer">
                   <svg

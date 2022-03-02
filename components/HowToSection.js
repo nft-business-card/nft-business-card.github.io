@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const HowToSection = () => {
     return (
-        <div id="about" className="py-10 bg-violet-700">
+        <div id="about" className="py-10 bg-violet-700 ">
             <h1 className="mt-5 mb-5 font-mono text-4xl font-semibold text-center text-gray-100 uppercase">
                 Features of NFT Business Card Project
             </h1>
@@ -28,7 +28,7 @@ const HowToSection = () => {
                     </p>
                 </div>
 
-                <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 mt-6 sm:mt-16 md:mt-20 lg:mt-24 bg-white shadow-lg rounded-lg dark:bg-gray-800">
+                <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 px-4 py-4 mt-6 sm:mt-16 md:mt-20 lg:mt-24 bg-white shadow-lg rounded-lg dark:bg-gray-800 mb-5">
                     <div className="flex-shrink-0">
                         <div className="flex items-center mx-auto justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
                         <svg className="w-7 h-7" width="40" height="40" viewBox="0 0 80 80" fill="none" strokeWidth="0"  xmlns="http://www.w3.org/2000/svg">

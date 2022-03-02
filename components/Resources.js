@@ -9,7 +9,7 @@ const Resources = () => {
     
 
     return (
-        <div id="about" className="bg dark:bg-pink-500">
+        <div id="about" className="bg dark:bg-pink-500 relative">
 
             <div className="container relative max-w-6xl py-3 pt-16 mx-auto sm:max-w-xl sm:mx-auto">
                 <div className="text-center">
