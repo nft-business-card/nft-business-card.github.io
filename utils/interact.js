@@ -24,6 +24,7 @@ export const connectWallet = async () => {
       const obj = {
         status: "",
         address: addressArray[0],
+        error: false
       };
 
       return obj;
@@ -31,11 +32,13 @@ export const connectWallet = async () => {
       return {
         address: "",
         status: "😞" + err.message,
+        error: true
       };
     }
   } else {
     return {
       address: "",
+      error: true,
       status: (
         <span>
           <p>
@@ -68,22 +71,26 @@ export const getCurrentWalletConnected = async () => {
         return {
           address: addressArray[0],
           status: "",
+          error: true
         };
       } else {
         return {
           address: "",
           status: "Please check your Metamask wallet 😞",
+          error: true
         };
       }
     } catch (err) {
       return {
         address: "",
         status: "Error Message from Metamask:" + err.message,
+        error: true
       };
     }
   } else {
     return {
       address: "",
+      error: true,
       status: (
         <span>
           <p>
@@ -122,6 +129,7 @@ export const mint = async (dataFormat) => {
       params: [transactionParameters],
     });
     return {
+      error: false,
       status: (
         <div>
           
@@ -172,6 +180,7 @@ export const mint = async (dataFormat) => {
   } catch (error) {
     return {
       status: "😥 " + error.message,
+      error: true
     };
   }
 

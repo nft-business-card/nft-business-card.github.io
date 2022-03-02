@@ -50,10 +50,21 @@ class Hero extends React.Component {
 
       if(this.doValidation()){
         const mintStatu = await mint(this.state);
-        if(mintStatu.status){
-          document.getElementById("walletSuccessDiv").hidden = false;
-          document.getElementById("walletSuccessDiv").innerHTML = renderToString(mintStatu.status);
-          setTimeout(()=> document.getElementById("walletSuccessDiv").hidden = true, 5000);
+        if(mintStatu.error){
+          document.getElementById("walletDiv").hidden = false;
+        document.getElementById("walletAlert").hidden = false;
+        document.getElementById("walletAlert").innerHTML =  renderToString(mintStatu.status);
+        setTimeout(()=> document.getElementById("walletDiv").hidden = true, 5000);
+          return;
+        }
+        else{
+          if(mintStatu.status ){
+            document.getElementById("walletSuccessDiv").hidden = false;
+            document.getElementById("walletSuccessDiv").innerHTML = renderToString(mintStatu.status);
+            //setTimeout(()=> document.getElementById("walletSuccessDiv").hidden = true, 5000);
+        }
+
+       
         }
       }
       else{
