@@ -9,10 +9,10 @@ const Resources = () => {
     
 
     return (
-        <div id="about" className="bg dark:bg-pink-500 relative">
+        <div id="about" className="container relative bg dark:bg-pink-500">
 
             <div className="container relative max-w-6xl py-3 pt-16 mx-auto sm:max-w-xl sm:mx-auto">
-                <div className="text-center">
+                <div className="text-center ">
                     <h5 className="text-5xl font-bold text-white">
                         <span className="text-white">
                       1300
