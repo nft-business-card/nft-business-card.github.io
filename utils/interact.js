@@ -153,8 +153,8 @@ export const mint = async (dataFormat) => {
                             
                                 <div className="lg:mt-0 lg:flex-shrink-0">
                                     <div className="flex items-center justify-between gap-4 w-full mt-8">
-                                        <a target="_blank" href={`https://polygonscan.com/tx/${txHash}`} type="button" className="py-4 px-6 m-2 bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
-                                        View on Mumbai
+                                        <a target="_blank" href={`https://polygonscan.com/address/0xc1bBE845f42AdcB503394E2Aa55E3F4285ba6A67`} type="button" className="py-4 px-6 m-2 bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                                        View on Polygon Scan
                                         </a>
                                         <a target="_blank" href={`https://opensea.io/collection/nft-business-card`} type="button" className="py-4 px-6 m-2 bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
                                         View on OpenSea
