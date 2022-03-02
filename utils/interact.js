@@ -76,7 +76,7 @@ export const getCurrentWalletConnected = async () => {
       } else {
         return {
           address: "",
-          status: "Please check your Metamask wallet 😞",
+          status: "Please connect your Metamask wallet 😞",
           error: true
         };
       }
