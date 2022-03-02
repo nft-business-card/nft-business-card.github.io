@@ -13,12 +13,16 @@ export const nftBusinessCard = new web3.eth.Contract(
 
 
 export const connectWallet = async () => {
+
+  
   if (window.ethereum) {
+    console.log(ethereum.isConnected());
     try {
       const addressArray = await window.ethereum.request({
+
         method: "eth_requestAccounts",
       });
-
+      console.log(addressArray);
       const obj = {
         status: "",
         address: addressArray[0],
@@ -32,6 +36,7 @@ export const connectWallet = async () => {
       };
     }
   } else {
+    console.log("else");
     return {
       address: "",
       status: (
@@ -55,7 +60,9 @@ export const connectWallet = async () => {
 };
 
 export const getCurrentWalletConnected = async () => {
+
   if (window.ethereum) {
+    console.log(window.ethereum);
     try {
       const addressArray = await window.ethereum.request({
         method: "eth_accounts",
@@ -79,6 +86,7 @@ export const getCurrentWalletConnected = async () => {
       };
     }
   } else {
+    console.log("else");
     return {
       address: "",
       status: (
@@ -187,5 +195,13 @@ export const getTotalSupplyNFT = async () => {
 
 export const isChainCorrect = () => {
   return window.ethereum.chainId == "0x13881";
+}
+export const isMetamaskInstalled = () => {
+  if (window.ethereum) {
+    return true;
+  }
+  else {
+    return false;
+  }
 }
 

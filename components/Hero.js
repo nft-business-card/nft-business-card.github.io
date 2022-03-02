@@ -8,6 +8,8 @@ import { renderToString } from 'react-dom/server'
 
 class Hero extends React.Component {
 
+  
+
   state = {
     displayColorPickerBackground: false,
     displayColorPickerText: false,
@@ -46,7 +48,7 @@ class Hero extends React.Component {
         return;
       }
 
-      if(this.state.fullNameData != "" && this.state.titleData != "" && this.state.otherData != ""){
+      if(this.doValidation()){
         const mintStatu = await mint(this.state);
         if(mintStatu.status){
           document.getElementById("walletSuccessDiv").hidden = false;
@@ -68,6 +70,15 @@ class Hero extends React.Component {
       document.getElementById("walletAlert").innerHTML = walletResponse.status;
       setTimeout(()=> document.getElementById("walletDiv").hidden = true, 5000);
     }
+  }
+
+  doValidation(){
+    return this.state.fullNameData != "" 
+      && this.state.titleData != "" 
+      && this.state.otherData != "" 
+      && this.state.fullNameData != "Your Full Name" 
+      && this.state.titleData != "Your Title" 
+      && this.state.otherData != "Email|Company|Website|Twitter" 
   }
 
   handleClickBackground = () => {

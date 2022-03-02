@@ -2,7 +2,7 @@ import Head from "next/head";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { useStatus } from "../context/statusContext";
-import { connectWallet, getCurrentWalletConnected } from "../utils/interact";
+import { connectWallet, getCurrentWalletConnected, isMetamaskInstalled } from "../utils/interact";
 
 
 const Header = () => {
@@ -10,9 +10,21 @@ const Header = () => {
   const [walletAddress, setWalletAddress] = useState("");
   
   const connectWalletPressed = async () => {
+    
+    if(isMetamaskInstalled()){
+      
+    
+    console.log("walled connect pressed");
     const walletResponse = await connectWallet();
+    console.log("walletResponse:");
+    console.log(walletResponse);
     setWalletAddress(walletResponse.address);
     setStatus(walletResponse.status);
+  }
+  else{
+    document.getElementById("walletConnectDiv").hidden = false;
+    setTimeout(()=> document.getElementById("walletConnectDiv").hidden = true, 5000);
+  }
   };
 
   useEffect(() => {
@@ -29,7 +41,7 @@ const Header = () => {
 
   const addWalletListener = () => {
     console.log("addWalletListener:");
-    //if (window.ethereum) {
+    if (window.ethereum) {
       ethereum.on('chainChanged', (chainId) => {
        console.log("chainId:");
         console.log(chainId);
@@ -39,7 +51,8 @@ const Header = () => {
         }
        // window.location.reload();
       });
-    //}
+    }
+
   };
 
  
@@ -142,6 +155,14 @@ const Header = () => {
           </nav>
         </div>
       </header>
+
+      <div id="walletConnectDiv" hidden={true}  className="bg-yellow-200 border-yellow-600 text-yellow-600 border-l-4 p-4 text-center" role="alert">
+    <p className="font-bold">
+    Please install Metamask 
+    </p>
+    
+</div>
+
     </>
   );
 };
