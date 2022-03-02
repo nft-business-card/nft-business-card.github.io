@@ -1,20 +1,29 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import {
     getTotalSupplyNFT
     } from "../utils/interact";
 const Resources = () => {
-
     
+    const [data, dataSet] = useState(0);
+    
+    const fetchMyAPI = useCallback(async () => {
+        let response = await getTotalSupplyNFT()
+        dataSet(response)
+      }, [])
+    
+      useEffect(() => {
+        fetchMyAPI()
+      }, [fetchMyAPI])
 
     return (
         <div id="about" className="relative bg dark:bg-pink-500">
             <div className="container relative max-w-6xl py-3 pt-16 mx-auto sm:max-w-xl sm:mx-auto">
                 <div className="text-center ">
                     <h5 className="text-5xl font-bold text-white">
-                        <span className="text-white">
-                      1300
+                        <span id="totalSupplySpan" className="text-white">
+                            {data}
                         </span>
                         <span className="text-indigo-500">
                             +

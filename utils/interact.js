@@ -195,7 +195,7 @@ export const getCurrentPriceOfNFT = async () => {
 };
 
 export const getTotalSupplyNFT = async () => {
-  const result = await nftBusinessCard.methods.totalSupply().call();
+  const result = await nftBusinessCard.methods.getTotalSupplyOfNFT().call();
   return result;
 };
 
