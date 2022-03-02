@@ -78,7 +78,7 @@ class Hero extends React.Component {
     else{
       document.getElementById("walletDiv").hidden = false;
       document.getElementById("walletAlert").hidden = false;
-      document.getElementById("walletAlert").innerHTML = walletResponse.status;
+      document.getElementById("walletAlert").innerHTML = renderToString(walletResponse.status);
       setTimeout(()=> document.getElementById("walletDiv").hidden = true, 5000);
     }
   }
