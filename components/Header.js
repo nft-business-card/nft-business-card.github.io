@@ -13,11 +13,7 @@ const Header = () => {
     
     if(isMetamaskInstalled())
     {
-      
-    console.log("walled connect pressed");
     const walletResponse = await connectWallet();
-    console.log("walletResponse:");
-    console.log(walletResponse);
     setWalletAddress(walletResponse.address);
     setStatus(walletResponse.status);
   }
@@ -41,12 +37,10 @@ const Header = () => {
   }, []);
 
   const addWalletListener = () => {
-    console.log("addWalletListener:");
     if (window.ethereum) {
       ethereum.on('chainChanged', (chainId) => {
         if(isChainCorrect()) // TODO: poligon olarak değiştiriliecek 137
         {
-           console.log("chain is correct");
            window.location.reload();
         }
 
